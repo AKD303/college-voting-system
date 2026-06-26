@@ -1,0 +1,152 @@
+/* Tablet Responsive (768px - 1024px) */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+        padding: 20px;
+    }
+
+    .table-responsive {
+        font-size: 14px;
+    }
+
+    .card-stat h2 {
+        font-size: 24px;
+    }
+}
+
+/* Medium Mobile (481px - 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .sidebar {
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .login-container {
+        padding: 10px;
+    }
+
+    .login-box {
+        margin-top: 50px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .btn-group {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .btn-group .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+/* Small Mobile (321px - 480px) */
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 16px;
+    }
+
+    .login-header h2 {
+        font-size: 20px;
+    }
+
+    .card-body {
+        padding: 15px !important;
+    }
+
+    .form-label {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .form-control {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .card-stat {
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .row > [class*='col-'] {
+        margin-bottom: 10px;
+    }
+
+    .nav-tabs {
+        gap: 5px;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Extra Small (up to 320px) */
+@media (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
+
+    .login-header h2 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .card-body {
+        padding: 10px !important;
+    }
+
+    .btn {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .form-control {
+        padding: 8px;
+        font-size: 12px;
+    }
+}

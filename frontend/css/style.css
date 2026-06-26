@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #28a745;
+    --danger-color: #dc3545;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Login Page */
+.login-body {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
+    min-height: 100vh;
+}
+
+.login-container {
+    padding: 20px;
+}
+
+.login-box {
+    animation: slideInUp 0.5s ease;
+}
+
+.login-header h2 {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Form Controls */
+.form-control {
+    border-radius: var(--border-radius);
+    border: 1px solid #ddd;
+    transition: var(--transition);
+    padding: 12px 15px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
+}
+
+/* Buttons */
+.btn {
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    padding: 12px 20px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #004085;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.4);
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Tabs */
+.nav-tabs {
+    border-bottom: 2px solid var(--light-color);
+}
+
+.nav-tabs .nav-link {
+    color: #666;
+    border: none;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    background-color: transparent;
+}
+
+/* Alerts */
+.alert {
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+/* Navigation */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+/* Dashboard */
+.dashboard-container {
+    padding: 30px 20px;
+}
+
+.sidebar {
+    background-color: var(--dark-color);
+    min-height: 100vh;
+    padding: 20px 0;
+    position: fixed;
+    width: 250px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px 20px;
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: var(--primary-color);
+    color: white;
+    padding-left: 25px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+}
+
+.card-stat {
+    border-left: 5px solid var(--primary-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-stat h5 {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-stat h2 {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Table */
+.table {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.table th {
+    background-color: var(--light-color);
+    font-weight: 600;
+    color: var(--dark-color);
+    border: none;
+    padding: 15px;
+}
+
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: var(--light-color);
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .login-container {
+        padding: 10px;
+    }
+
+    .card-body {
+        padding: 20px !important;
+    }
+
+    .btn-lg {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-control,
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .login-header h2 {
+        font-size: 24px;
+    }
+
+    .card-stat {
+        margin-bottom: 15px;
+    }
+}

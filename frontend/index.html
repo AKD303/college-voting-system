@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Voting System - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+    <div class="container login-container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-6 col-lg-5">
+                <div class="login-box">
+                    <div class="login-header">
+                        <h2 class="text-center mb-4">🗳️ College Voting System</h2>
+                    </div>
+
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body p-5">
+                            <ul class="nav nav-tabs mb-4" id="loginTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">Login</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab">Register</button>
+                                </li>
+                            </ul>
+
+                            <!-- Login Form -->
+                            <div class="tab-content" id="loginTabContent">
+                                <div class="tab-pane fade show active" id="login" role="tabpanel">
+                                    <form id="loginForm">
+                                        <div class="mb-3">
+                                            <label for="login_username" class="form-label">Username</label>
+                                            <input type="text" class="form-control form-control-lg" id="login_username" name="username" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="login_password" class="form-label">Password</label>
+                                            <input type="password" class="form-control form-control-lg" id="login_password" name="password" required>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                                            <label class="form-check-label" for="remember">Remember me</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-lg w-100">Login</button>
+                                        <div id="loginMessage" class="alert alert-info mt-3" style="display:none;"></div>
+                                    </form>
+                                </div>
+
+                                <!-- Register Form -->
+                                <div class="tab-pane fade" id="register" role="tabpanel">
+                                    <form id="registerForm">
+                                        <div class="mb-3">
+                                            <label for="reg_fullname" class="form-label">Full Name</label>
+                                            <input type="text" class="form-control form-control-lg" id="reg_fullname" name="full_name" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="reg_username" class="form-label">Username</label>
+                                            <input type="text" class="form-control form-control-lg" id="reg_username" name="username" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="reg_email" class="form-label">Email</label>
+                                            <input type="email" class="form-control form-control-lg" id="reg_email" name="email" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="reg_enrollment" class="form-label">Enrollment Number</label>
+                                            <input type="text" class="form-control form-control-lg" id="reg_enrollment" name="enrollment_number" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="reg_department" class="form-label">Department</label>
+                                            <select class="form-control form-control-lg" id="reg_department" name="department" required>
+                                                <option value="">Select Department</option>
+                                                <option value="CSE">Computer Science</option>
+                                                <option value="ECE">Electronics</option>
+                                                <option value="ME">Mechanical</option>
+                                                <option value="CE">Civil</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="reg_password" class="form-label">Password</label>
+                                            <input type="password" class="form-control form-control-lg" id="reg_password" name="password" required>
+                                            <small class="text-muted">Min 8 characters</small>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="reg_confirm" class="form-label">Confirm Password</label>
+                                            <input type="password" class="form-control form-control-lg" id="reg_confirm" name="confirm_password" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-success btn-lg w-100">Register</button>
+                                        <div id="registerMessage" class="alert alert-info mt-3" style="display:none;"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
