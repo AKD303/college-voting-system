@@ -23,4 +23,76 @@ $request_method = $_SERVER['REQUEST_METHOD'];
 $request_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $request_path = str_replace('/college-voting-system/backend/php/', '', $request_path);
 $request_path = str_replace('/backend/php/', '', $request_path);
-$request_path = trim($request_path, '/');\n\n// Route the requests\nswitch ($request_path) {\n    // Authentication Routes\n    case 'login':\n        if ($request_method === 'POST') {\n            include 'login.php';\n        }\n        break;\n\n    case 'register':\n        if ($request_method === 'POST') {\n            include 'register.php';\n        }\n        break;\n\n    case 'logout':\n        if ($request_method === 'POST' || $request_method === 'GET') {\n            include 'logout.php';\n        }\n        break;\n\n    // API Routes - Users\n    case 'api/users':\n        if ($request_method === 'GET') {\n            include 'api/get_users.php';\n        }\n        break;\n\n    case 'api/user/update':\n        if ($request_method === 'POST') {\n            include 'api/update_user.php';\n        }\n        break;\n\n    // API Routes - Candidates\n    case 'api/candidates':\n        if ($request_method === 'GET') {\n            include 'api/get_candidates.php';\n        }\n        break;\n\n    // API Routes - Votes\n    case 'api/votes':\n        if ($request_method === 'GET') {\n            include 'api/get_votes.php';\n        } else if ($request_method === 'POST') {\n            include 'api/add_vote.php';\n        }\n        break;\n\n    // Health check\n    case 'api/health':\n        echo json_encode([\n            'status' => 'success',\n            'message' => 'API is running',\n            'timestamp' => date('Y-m-d H:i:s')\n        ]);\n        break;\n\n    // 404 - Not Found\n    default:\n        http_response_code(404);\n        echo json_encode([\n            'status' => 'error',\n            'message' => 'Endpoint not found: ' . $request_path\n        ]);\n        break;\n}\n\n$conn->close();\n?>\n"
+$request_path = trim($request_path, '/');
+
+// Route the requests
+switch ($request_path) {
+    // Authentication Routes
+    case 'login':
+        if ($request_method === 'POST') {
+            include 'login.php';
+        }
+        break;
+
+    case 'register':
+        if ($request_method === 'POST') {
+            include 'register.php';
+        }
+        break;
+
+    case 'logout':
+        if ($request_method === 'POST' || $request_method === 'GET') {
+            include 'logout.php';
+        }
+        break;
+
+    // API Routes - Users
+    case 'api/users':
+        if ($request_method === 'GET') {
+            include 'api/get_users.php';
+        }
+        break;
+
+    case 'api/user/update':
+        if ($request_method === 'POST') {
+            include 'api/update_user.php';
+        }
+        break;
+
+    // API Routes - Candidates
+    case 'api/candidates':
+        if ($request_method === 'GET') {
+            include 'api/get_candidates.php';
+        }
+        break;
+
+    // API Routes - Votes
+    case 'api/votes':
+        if ($request_method === 'GET') {
+            include 'api/get_votes.php';
+        } else if ($request_method === 'POST') {
+            include 'api/add_vote.php';
+        }
+        break;
+
+    // Health check
+    case 'api/health':
+        echo json_encode([
+            'status' => 'success',
+            'message' => 'API is running',
+            'timestamp' => date('Y-m-d H:i:s')
+        ]);
+        break;
+
+    // 404 - Not Found
+    default:
+        http_response_code(404);
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Endpoint not found: ' . $request_path
+        ]);
+        break;
+}
+
+$conn->close();
+?>
