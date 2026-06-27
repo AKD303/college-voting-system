@@ -1,10 +1,15 @@
 <?php
 include 'config.php';
 
-// Clear session
+header('Content-Type: application/json');
+
+// Destroy session
 session_destroy();
 
-// Clear cookies
+// Clear all session data
+$_SESSION = [];
+
+// Delete session cookie
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(session_name(), '', time() - 42000,
@@ -13,5 +18,11 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-echo json_encode(['status' => 'success', 'message' => 'Logged out successfully']);
+echo json_encode([
+    'status' => 'success',
+    'message' => 'Logged out successfully',
+    'redirect' => 'index.html'
+]);
+
+$conn->close();
 ?>
